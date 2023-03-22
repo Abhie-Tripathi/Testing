@@ -1,30 +1,58 @@
-// const header = document.querySelector("#main-header");
-// header.style.borderBottom = "10px solid black"
-// const childheader= document.getElementsByTagName("h2");
-// childheader[0].style.color= "green";
-// childheader[0].innerHTML="<b>Add Items</b>";
-// const list = document.getElementsByClassName("list-group-item");
-// list[2].style.backgroundColor="green"
-// for(let i=0;i<list.length;i++){
-//     list[i].style.fontWeight="bold"
-    // which does't apply to item 5 because it does not have class
-// }
-const list2=document.getElementsByTagName("li");
-for(let i=0;i<list2.length;i++){
-    list2[i].style.fontWeight="bold"
-// which does apply to item 5 because it has tagname li
-}
-list2[1].style.backgroundColor="green"
-list2[2].style.display="none"
+// parentElement
+// listitem=document.querySelector("#header-title");
+// console.log(listitem.parentElement)
+// listitem.parentElement.style.backgroundColor="red"
+// lastelementchild
+// listitem=document.querySelector("ul");
+// console.log(listitem.lastElementChild)
+// listitem.lastElementChild.style.backgroundColor="red"
+// lastChild
+// listitem=document.querySelector("ul");
+// console.log(listitem.lastChild) //logs basically the white spaces
+// listitem.lastChild.style.backgroundColor="red"
+// firstElementChild
+// listitem=document.querySelector("ul");
+// console.log(listitem.firstElementChild)
+// listitem.firstElementChild.style.backgroundColor="red"
+// firstChild
+// listitem=document.querySelector("ul");
+// console.log(listitem.firstChild)//logs the white spaces 
+// listitem.firstChild.style.backgroundColor="red"
+// nextSiblings
+// listitem=document.querySelector("h2");
+// console.log(listitem.nextSibling)//white spaces
+// listitem.nextSibling.style.color="red"
+//nextElementSibling
+// listitem=document.querySelector("h2");
+// console.log(listitem.nextElementSibling)
+// listitem.nextElementSibling.style.backgroundColor="red"
+// previousSibling
+// listitem=document.querySelector("ul");
+// console.log(listitem.previousElementSibling)
+// listitem.previousElementSibling.style.backgroundColor="red"
+// create Element
+const newdiv=document.createElement("div");
+newdiv.className = "div"
+newdiv.id="div1"
+// setAttribute
+newdiv.setAttribute('title',"attribute");
+// create text node
+const divtext = document.createTextNode("Hello");
+// append text node to element
+newdiv.appendChild(divtext)
+// selecting where to insert
+const cont = document.querySelector("header .container");
+// selecting Element to be placed after
+const h = document.querySelector("header h1");
+// inserting newdiv before h
+cont.insertBefore(newdiv,h);
+const newdiv1=document.createElement("div");
+const divtext1 = document.createTextNode("Hello");
+newdiv1.appendChild(divtext1)
 
-const itemlist=document.querySelectorAll("li");
-itemlist[1].style.color="green"
-for(let i=0;i<itemlist.length;i=i+2){
-    itemlist[i].style.backgroundColor="green"
-    // console.log(itemlist[i])
-}
+const list = document.querySelector("#items");
 
+const listitem1=document.querySelector("li");
 
-
-
+list.insertBefore(newdiv1,listitem1);
 
