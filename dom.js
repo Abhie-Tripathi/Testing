@@ -6,7 +6,7 @@ function additem(e){
     const item = document.getElementById('item').value;
     const list = document.createElement('li');
     const edit = document.createElement("button");
-    edit.className="btn btn-primary btn-sm float-right delete"
+    edit.className="btn btn-primary btn-sm float-right"
     edit.appendChild(document.createTextNode('Edit'))
     list.appendChild(edit)
     const btn = document.createElement('button');
