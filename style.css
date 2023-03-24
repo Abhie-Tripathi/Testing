@@ -80,5 +80,11 @@
     display: block;
     background-color: brown;
     border-radius: 6px;
-    
+
+  }
+
+  .edit{
+    display: block;
+    background-color: aqua;
+    border-radius: 4px;
   }
