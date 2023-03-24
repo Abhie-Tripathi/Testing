@@ -75,3 +75,10 @@
     padding: 5px;
     margin: 5px;
   }
+
+  .delete{
+    display: block;
+    background-color: brown;
+    border-radius: 6px;
+    
+  }
