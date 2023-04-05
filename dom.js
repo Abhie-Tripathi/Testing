@@ -7,9 +7,9 @@ form.addEventListener("submit", addinlocal);
 function addinlocal(e) {
     e.preventDefault();
     var obj = { "username": username.value, "email": email.value, "phone": phone.value };
-    var strobj = JSON.stringify(obj)
-    localStorage.setItem(username.value, strobj);
-    console.log(obj)
+    // Calling post request on crucrud api
+    axios.post("https://crudcrud.com/api/54a2404bdf944e6fa66a4b648c25abf6/appointments",obj)
+
     var li = document.createElement("li");
     var btn = document.createElement("button");
     var edit = document.createElement("button");
@@ -22,10 +22,10 @@ function addinlocal(e) {
     li.appendChild(edit)
     li.append(btn)
     ul.appendChild(li)
-    btn.onclick = () => {
-        localStorage.removeItem(obj.username)
-        ul.removeChild(li)
-    }
+    // btn.onclick = () => {
+    //     localStorage.removeItem(obj.username)
+    //     ul.removeChild(li)
+    // }
     edit.addEventListener("click",r);
     function r(e){
         e.preventDefault()
@@ -34,6 +34,5 @@ function addinlocal(e) {
         username.value=obj.username
         email.value= obj.email
         phone.value= obj.phone}}
-    
 
         }
