@@ -5,11 +5,8 @@ const ul = document.getElementById("users")
 const submit = document.getElementById("submit")
 submit.addEventListener("click", addinlocal);
 function addinlocal(e) {
-    e.preventDefault() 
     var obj = { "username": username.value, "email": email.value, "phone": phone.value };
-    
     axios.post("https://crudcrud.com/api/07ab24b575214d6b99042b94e4d6b54e/appoint",obj)
-    
     showonscreen(obj)
 }
 
@@ -31,6 +28,16 @@ function showonscreen(obj){
             .then(ul.removeChild(e.target.parentElement))
 
         })
+        edit.addEventListener("click",(e)=>{
+            axios.delete(`https://crudcrud.com/api/07ab24b575214d6b99042b94e4d6b54e/appoint/${obj._id}`)
+            .then(()=>{username.value = obj.username
+                email.value = obj.email
+                phone.value = obj.phone
+                ul.removeChild(e.target.parentElement)
+                
+            })
+            })
+            
         }
 
 
