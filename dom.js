@@ -1,15 +1,14 @@
 const username = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
-const form = document.getElementById("my-form");
 const ul = document.getElementById("users")
-form.addEventListener("submit", addinlocal);
+const submit = document.getElementById("submit")
+submit.addEventListener("click", addinlocal);
 function addinlocal(e) {
-    e.preventDefault();
-
+    e.preventDefault() 
     var obj = { "username": username.value, "email": email.value, "phone": phone.value };
     
-    axios.post("https://crudcrud.com/api/54a2404bdf944e6fa66a4b648c25abf6/appointments",obj)
+    axios.post("https://crudcrud.com/api/07ab24b575214d6b99042b94e4d6b54e/appoint",obj)
     
     showonscreen(obj)
 }
@@ -26,12 +25,19 @@ function showonscreen(obj){
             Phone No = ${obj.phone}`))
             li.appendChild(edit)
             li.append(btn)
-            ul.appendChild(li)}
+            ul.appendChild(li)
+        btn.addEventListener("click",(e)=>{
+            axios.delete(`https://crudcrud.com/api/07ab24b575214d6b99042b94e4d6b54e/appoint/${obj._id}`)
+            .then(ul.removeChild(e.target.parentElement))
+
+        })
+        }
+
 
 
 
 window.addEventListener("DOMContentLoaded",()=> {
-    axios.get("https://crudcrud.com/api/54a2404bdf944e6fa66a4b648c25abf6/appointments")
+   axios.get("https://crudcrud.com/api/07ab24b575214d6b99042b94e4d6b54e/appoint")
     .then(data => {
         for(let i=0;i<data.data.length;i++){
             showonscreen(data.data[i])
